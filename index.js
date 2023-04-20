@@ -8,9 +8,8 @@ var sms = require('./sms.js');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-
+app.disable("x-powered-by");
 app.use(bodyParser.json());
-
 app.get("/api/v1/health", async (req, res, next) => {
     res.json({
         "message": "Ok",
