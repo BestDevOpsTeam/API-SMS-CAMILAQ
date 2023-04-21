@@ -1,8 +1,8 @@
 const express = require("express")
 const bodyParser = require('body-parser');
-var HTTP_PORT = 3001;
+const HTTP_PORT = 3001;
 const app = express();
-var sms = require('./sms.js');
+const sms = require('./sms.js');
 
 
 app.use(bodyParser.urlencoded({
@@ -19,11 +19,11 @@ app.get("/api/v1/health", async (req, res, next) => {
 
 app.post("/api/v1/sms", async (req, res, next) => {
     const body = req.body;
-    var {
+    const {
         celular,
         nombre
     } = body;
-    let smsResponse = await sms(celular);
+    const smsResponse = await sms(celular);
     if (smsResponse == null || smsResponse == undefined || smsResponse.status == 'error') {
         res.status(500).json(smsResponse)
     } else {
