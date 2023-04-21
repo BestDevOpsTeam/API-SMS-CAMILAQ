@@ -3,7 +3,7 @@ const endoint = 'https://api.juancarlosparragalan.com/prodsms/api/v1/smsmessage'
 async function sendSMS(phoneNumber, name) {
     const response = {}
     if(!phoneNumber){
-        response = {
+        let = {
             "status": "error",
             "message": "El número de celular es requerido"
         }
@@ -12,7 +12,7 @@ async function sendSMS(phoneNumber, name) {
         const bodyrequest = {
             phoneNumber: phoneNumber,
         }
-        response = await axios.post(endoint, bodyrequest);
+        let = await axios.post(endoint, bodyrequest);
         return response.data;
     }
 }
