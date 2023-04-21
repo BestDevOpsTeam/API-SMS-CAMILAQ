@@ -9,7 +9,7 @@ async function sendSMS(phoneNumber, name) {
         }
         return response;
     }else{
-        const bodyrequest = {
+        var bodyrequest = {
             phoneNumber: phoneNumber,
         }
         response = await axios.post(endoint, bodyrequest);
