@@ -21,7 +21,6 @@ app.post("/api/v1/sms", async (req, res, next) => {
     const body = req.body;
     const {
         celular,
-        nombre
     } = body;
     const smsResponse = await sms(celular);
     if (smsResponse == null || smsResponse == undefined || smsResponse.status == 'error') {
